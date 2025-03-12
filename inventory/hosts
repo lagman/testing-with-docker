@@ -1,0 +1,6 @@
+[cont]
+my_configs-app3-1
+my_configs-app1-1
+my_configs-app2-1
+[cont:vars]
+ansible_connection=docker
