@@ -1,6 +1,0 @@
-plugin: community.docker.docker_containers
-docker_host: unix:///var/run/docker.sock
-filters:
-  - include: >-
-      "xro_env" in docker_config.Labels
-  - exclude: true
