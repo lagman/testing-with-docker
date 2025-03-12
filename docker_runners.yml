@@ -1,0 +1,40 @@
+# docker-compose.yml
+
+services:
+  app1:
+    image: ubuntu:latest
+    command: sleep infinity
+    ports:
+      - "8081:80"
+    networks:
+      - awx
+      - service-mesh
+    labels:
+      - "xro_docker.ymlenv=demo"
+
+  app2:
+    image: ubuntu:latest
+    command: sleep infinity
+    ports:
+      - "8082:80"
+    networks:
+      - awx
+      - service-mesh
+    labels:
+      - "xro_env=demo"
+
+  app3:
+    image: ubuntu:latest
+    command: sleep infinity
+    networks:
+      - awx
+      - service-mesh
+    labels:
+      - "xro_env=demo"
+
+# Reference existing networks (don't create new ones)
+networks:
+  awx:
+    external: true
+  service-mesh:
+    external: true
