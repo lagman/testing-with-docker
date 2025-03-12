@@ -1,0 +1,7 @@
+---
+- name: Run db-jobs on all hosts
+  hosts: all
+  become: true
+  gather_facts: true
+  roles:
+    - role: chusiang.helloworld
